@@ -1,12 +1,13 @@
 INSERT INTO burgers
-    (name)
+    (burger_name)
 VALUES
     ('Shroom');
 INSERT INTO burgers
-    (name)
+    (burger_name)
 VALUES
     ('American');
 INSERT INTO burgers
-    (name)
+    (burger_name)
 VALUES
     ('Santa Fe');
+    

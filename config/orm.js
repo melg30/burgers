@@ -1,4 +1,4 @@
-const connection = require("./connection");
+const connection = require("./connection.js");
 
 function printQuestionMarks(num) {
   const arr = [];
@@ -27,7 +27,7 @@ function objToSql(ob) {
 }
 
 const orm = {
-  selectAll: function(tableInput, cb) {
+  all: function(tableInput, cb) {
     const queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
@@ -37,7 +37,7 @@ const orm = {
       cb(result);
     });
   },
-  insertOne: function(table, cols, vals, cb) {
+  create: function(table, cols, vals, cb) {
     const queryString = "INSERT INTO " + table;
 
     queryString += " (";
@@ -56,7 +56,7 @@ const orm = {
       cb(result);
     });
   },
-  updateOne: function(table, objColVals, condition, cb) {
+  update: function(table, objColVals, condition, cb) {
     const queryString = "UPDATE " + table;
 
     queryString += " SET ";
@@ -70,6 +70,19 @@ const orm = {
       if (err) {
         throw err;
       }
+      cb(result);
+    });
+  },
+
+  delete: function(table, cb) {
+    var queryString = "DELETE FROM " + table;
+    queryString += " WHERE eaten = true;";
+    console.log(queryString);
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
       cb(result);
     });
   }
