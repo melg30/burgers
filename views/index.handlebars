@@ -41,11 +41,11 @@
         <div class="col">
             <div class="add-burger">
                 <h2>Add a Burger!</h2>
-                <form class="create-form">
+                <form class="create-form" action="/api/burgers" method="POST">
 
                     <div class="form-group">
                         <label for="ca">Burger Name:</label>
-                        <input type="text" id="ca" class="burger_id" name="burger_name" value={{id}}>
+                        <input type="text" class="burger_id" name="burger_name" value="">
                         <br><button class="btn" type="submit">ADD ME!</button>
                     </div>
                 </form>
