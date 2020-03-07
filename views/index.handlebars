@@ -15,11 +15,16 @@
                     <li>
                         {{this.burger_name}}
                         <button type="button" class="change-eat btn" data-id="{{id}}" data-newBurger="{{burgers}}">
-                            {{#if devoured}}EATEN!{{else}}EAT ME!{{/if}}
+
+                            {{#if devoured}}EATEN!{{else}}Eaten!{{/if}}
                         </button>
+
+                        <button type="button" class="delete-burger" data-id="{{this.id}}">DELETE!</button>
                     </li>
+
                     {{/unless}}
                     {{/each}}
+
                 </ul>
             </div>
         </div>
@@ -34,6 +39,8 @@
                     {{/each}}
                 </ul>
             </div>
+
+
         </div>
     </div>
     <br><br>
